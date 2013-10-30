@@ -1,1 +1,1 @@
-== LoL Analyzer
+# LoL Analyzer
