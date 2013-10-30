@@ -1,0 +1,9 @@
+<h1>About <small>(Makeshift stats page)</small></h1>
+
+<% if @game.body["success"] %>
+  <% @game.body.access("data.gameStatistics.array.0.statistics.array").each do |stat| %>
+    <p><%= stat["statType"].humanize %>: <%= stat["value"] %></p>
+  <% end %>
+<% else %>
+  <p><%= @game.body["error_message"] %></p>
+<% end %>

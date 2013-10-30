@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Queue type:</b>
+  <%= @game.queue_type %>
+</p>
+
+<p>
+  <b>Ip earned:</b>
+  <%= @game.ip_earned %>
+</p>
+
+<p>
+  <b>Largest killing spree:</b>
+  <%= @game.largest_killing_spree %>
+</p>
+
+<p>
+  <b>Champion:</b>
+  <%= @game.champion_id %>
+</p>
+
+<p>
+  <b>Gold earned:</b>
+  <%= @game.gold_earned %>
+</p>
+
+<p>
+  <b>Spell one:</b>
+  <%= @game.spell_one %>
+</p>
+
+<p>
+  <b>Spell two:</b>
+  <%= @game.spell_two %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

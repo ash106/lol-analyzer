@@ -1,0 +1,17 @@
+<%= simple_form_for(@game) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :queue_type %>
+    <%= f.input :ip_earned %>
+    <%= f.input :largest_killing_spree %>
+    <%= f.input :champion_id %>
+    <%= f.input :gold_earned %>
+    <%= f.input :spell_one %>
+    <%= f.input :spell_two %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

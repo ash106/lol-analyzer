@@ -1,0 +1,35 @@
+<h1>Listing games</h1>
+
+<table>
+  <tr>
+    <th>Queue type</th>
+    <th>Ip earned</th>
+    <th>Largest killing spree</th>
+    <th>Champion</th>
+    <th>Gold earned</th>
+    <th>Spell one</th>
+    <th>Spell two</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.queue_type %></td>
+    <td><%= game.ip_earned %></td>
+    <td><%= game.largest_killing_spree %></td>
+    <td><%= game.champion_id %></td>
+    <td><%= game.gold_earned %></td>
+    <td><%= game.spell_one %></td>
+    <td><%= game.spell_two %></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Game', new_game_path %>

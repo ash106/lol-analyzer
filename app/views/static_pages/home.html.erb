@@ -1,0 +1,11 @@
+<h1>League Analyzer</h1>
+
+<%= simple_form_for @user, url: root_path do |f| %>
+  <%= f.input :email %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :summoner_name %>
+  <br />
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
