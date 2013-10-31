@@ -7,6 +7,7 @@ LolAnalyzer::Application.routes.draw do
   root :to => 'static_pages#home'
 
   get "about", to: 'static_pages#about', as: :about
+  post "about", to: 'static_pages#about', as: :about
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

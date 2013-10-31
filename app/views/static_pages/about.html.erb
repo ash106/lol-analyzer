@@ -1,9 +1,20 @@
 <h1>About <small>(Makeshift stats page)</small></h1>
 
+<p>Summoner name: <%= @summoner_name %></p>
+
 <% if @game.body["success"] %>
-  <% @game.body.access("data.gameStatistics.array.0.statistics.array").each do |stat| %>
+  <!-- Print stats array -->
+  <% @game.body.access("data.gameStatistics.array.2.statistics.array").each do |stat| %>
     <p><%= stat["statType"].humanize %>: <%= stat["value"] %></p>
+  <% end %>
+
+  <h3>New array here</h3>
+  <!-- Print each key value pair in entire gameStatistics array (including nested arrays) -->
+  <% @game.body.access("data.gameStatistics.array.2").each_pair do |k,v| %>
+    <p><%= k %>: <%= v %></p>
   <% end %>
 <% else %>
   <p><%= @game.body["error_message"] %></p>
 <% end %>
+
+
