@@ -1,0 +1,6 @@
+<h1>Items</h1>
+
+<% @items.body.access("data").each_pair do |k,v| %>
+  <p><%= k %>: <%= v.access("name") %> <%= v.access("gold") %> <%= v.access("stats") %></p>
+
+<% end %>
