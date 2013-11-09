@@ -10,6 +10,7 @@ LolAnalyzer::Application.routes.draw do
   post "about", to: 'static_pages#about', as: :about
   get "champions", to: 'static_pages#champions', as: :champions
   get "items", to: 'static_pages#items', as: :items
+  get "movespeed", to: 'static_pages#movespeed', as: :movespeed
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

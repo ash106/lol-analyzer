@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_filter :set_unirest_header
+
   def home
     # @user = User.new
   end
@@ -9,26 +11,24 @@ class StaticPagesController < ApplicationController
       @summoner_name = "Wheatbox"
     end
 
-    @game = Unirest::get("https://teemojson.p.mashape.com/player/na/#{@summoner_name}/recent_games", 
-      {
-        "X-Mashape-Authorization" => ENV['MASHAPE_KEY']
-      }
-    )
+    @game = Unirest.get("https://teemojson.p.mashape.com/player/na/#{@summoner_name}/recent_games")
   end
 
   def champions
-    @champions = Unirest::get("https://teemojson.p.mashape.com/datadragon/champion", 
-      {
-        "X-Mashape-Authorization" => ENV['MASHAPE_KEY']
-      }
-    )
+    @champions = Unirest.get("https://teemojson.p.mashape.com/datadragon/champion")
   end
 
   def items
-    @items = Unirest::get("https://teemojson.p.mashape.com/datadragon/item", 
-      {
-        "X-Mashape-Authorization" => ENV['MASHAPE_KEY']
-      }
-    )
+    @items = Unirest.get("https://teemojson.p.mashape.com/datadragon/item")
+  end
+
+  def movespeed
+    @champions = Unirest.get("https://teemojson.p.mashape.com/datadragon/champion")
+  end
+
+  private
+
+  def set_unirest_header
+    Unirest.default_header("X-Mashape-Authorization",ENV['MASHAPE_KEY'])
   end
 end
